@@ -12,8 +12,14 @@ public class Ui {
     private static final Scanner SC = new Scanner(System.in);
 
     public static void printWelcome() {
-        String welcomeMsg = "Welcome to L.O.T.S! What would you like to track today?";
+        String welcomeMsg = "Welcome to L.O.T.S! Which menu would you like to select?";
         printWithBorder(welcomeMsg);
+    }
+
+    public static void printMenuSelection(String input) {
+        String selectionMessage = "You have picked " + input + " as your menu. " +
+                "What would you like to add today?";
+        printWithoutBorder(selectionMessage);
     }
 
     public static void printGoodbye() {
@@ -142,6 +148,16 @@ public class Ui {
 
     public static void printMenuHeader() {
         printWithoutBorder("index | Food Name                         | Price");
+        printWithoutBorder(line);
+    }
+
+    /**
+     * Prints the names of all txt files in the folder Menu.
+     * @param index is the number of menus.
+     * @param menuName is the menu name.
+     */
+    public static void printListOfMenu(int index, String menuName) {
+        System.out.println(index + " " + menuName);
         printWithoutBorder(line);
     }
 

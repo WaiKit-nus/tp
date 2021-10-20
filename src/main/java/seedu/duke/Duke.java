@@ -13,7 +13,7 @@ public class Duke {
      */
     public static Logger log = Logger.getLogger("LOTS");
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws LotsException {
         Ui.printWelcome();
         runDuke();
         Ui.printGoodbye();
@@ -22,7 +22,9 @@ public class Duke {
     /**
      * The main function that duke runs on.
      */
-    private static void runDuke() {
+    private static void runDuke() throws LotsException {
+        Menu menu = new Menu();
+        menu.printListOfMenu(menu.findAllMenuInFile("Menu"));
         Command currentCommand;
         PeopleManager manager = new PeopleManager();
         boolean isEnd = false;
